@@ -1,11 +1,9 @@
 const data = require('./data');
-// const catCall = require('./data');
-const doggoApp = require('./xhr');
-const dinoApp = require('./xhr');
 
 const catButton = document.getElementById('cats');
 const dogButton = document.getElementById('dogs');
 const dinoButton = document.getElementById('dinos');
+const resetButton = document.getElementById('reset');
 
 const showCats = () => {
   console.log('sup');
@@ -13,17 +11,25 @@ const showCats = () => {
 };
 
 const showDogs = () => {
-  doggoApp();
+  console.log('sup');
+  data.doggoCall();
 };
 
 const showDinos = () => {
-  dinoApp();
+  console.log('sup');
+  data.dinoCall();
+};
+
+const resetPage = () => {
+  console.log('reset button');
+  data.initializer();
 };
 
 const buttonEvents = () => {
   catButton.addEventListener('click', showCats);
   dogButton.addEventListener('click', showDogs);
   dinoButton.addEventListener('click', showDinos);
+  resetButton.addEventListener('click', resetPage);
 };
 
 module.exports = buttonEvents;
